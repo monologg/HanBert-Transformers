@@ -18,8 +18,6 @@ $ transformers bert HanBert-54kN/model.ckpt-3000000 \
 - Tokenizer를 위하여 `tokenization_hanbert.py` 파일을 새로 제작
   - Transformers의 **tokenization 관련 함수 지원** (`convert_tokens_to_ids`, `convert_tokens_to_string`, `encode_plus`...)
 
-## Dependencies
-
 ## How to Use
 
 1. **관련 라이브러리 설치**
