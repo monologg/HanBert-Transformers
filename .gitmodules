@@ -1,0 +1,6 @@
+[submodule "subtask/ner"]
+	path = subtask/ner
+	url = https://github.com/monologg/HanBert-NER
+[submodule "subtask/nsmc"]
+	path = subtask/nsmc
+	url = https://github.com/monologg/HanBert-nsmc
