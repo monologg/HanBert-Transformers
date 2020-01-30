@@ -130,7 +130,12 @@ class BasicTokenizer(object):
     """Runs basic tokenization (punctuation splitting, lower casing, etc.)."""
 
     def __init__(self, use_moran=False, use_zwj=True, moran_file='libmoran4dnlp.so'):
-        self.moran = MorAn16(moran_file)
+        self.moran = None
+        try:
+            self.moran = MorAn16(moran_file)
+        except:
+            logger.warning("Only ubuntu is supported for HanBertTokenizer!")
+
         self.use_moran = use_moran
         self.use_zwj = use_zwj
 
