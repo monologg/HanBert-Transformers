@@ -4,7 +4,7 @@
 
 ## Details
 
-- HanBert를 Tensorflow ckpt에서 Pytorch ckpt로 변환
+- HanBert Tensorflow ckpt를 Pytorch로 변환
   - 기존의 Optimizer 관련 Parameter는 제거하여 기존의 1.43GB에서 488MB로 줄였습니다.
   - **변환 시 Optimizer 관련 파라미터를 Skip 하지 못하는 이슈가 있어 해당 부분을 고쳐서 변환했습니다.** ([해당 이슈 관련 PR](https://github.com/huggingface/transformers/pull/2652))
 
@@ -26,20 +26,21 @@ Tokenizer의 경우 **Ubuntu** 환경에서만 사용 가능합니다.
 
 ### Preparation
 
-1. 관련 라이브러리 설치
+**1. 관련 라이브러리 설치**
 
-   - torch>=1.1.0
-   - transformers>=2.2.2
+- torch>=1.1.0
+- transformers>=2.2.2
 
-2. 모델 다운로드 후 압축 해제
+**2. 모델 다운로드 후 압축 해제**
 
-   - 기존의 HanBert에서는 tokenization 관련 파일을 `/usr/local/moran`에 복사해야 했지만, 해당 폴더 이용 시 그래도 사용 가능합니다.
-   - **다운로드 링크 (Pretrained weight + Tokenizer tool)**
-     - [HanBert-54kN-torch](https://drive.google.com/open?id=1LUyrnhuNC3e8oD2QMJv8tIDrXrxzmdu4)
-     - [HanBert-54kN-IP-torch](https://drive.google.com/open?id=1wjROsuDKoJQx4Pu0nqSefVDs3echKSXP)
+- 기존의 HanBert에서는 tokenization 관련 파일을 `/usr/local/moran`에 복사해야 했지만, 해당 폴더 이용 시 그래도 사용 가능합니다.
+- **다운로드 링크 (Pretrained weight + Tokenizer tool)**
+  - [HanBert-54kN-torch](https://drive.google.com/open?id=1LUyrnhuNC3e8oD2QMJv8tIDrXrxzmdu4)
+  - [HanBert-54kN-IP-torch](https://drive.google.com/open?id=1wjROsuDKoJQx4Pu0nqSefVDs3echKSXP)
 
-3. tokenization_hanbert.py 준비 (Transformers 라이브러리의 tokenization 관련 함수 지원)
-   - 하단의 형태로 디렉토리가 세팅이 되어 있어야 합니다.
+**3. tokenization_hanbert.py 준비**
+
+- 하단의 형태로 디렉토리가 세팅이 되어 있어야 합니다.
 
 ```
 .
