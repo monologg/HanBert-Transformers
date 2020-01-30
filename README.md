@@ -100,7 +100,7 @@ $ python3 test_hanbert_ip.py
 |                   | **NSMC** (acc) | **Naver-NER** (F1) |
 | ----------------- | -------------- | ------------------ |
 | HanBert-54kN      | **90.16**      | **84.84**          |
-| HanBert-54kN-IP   | 88.72          | 83.86              |
+| HanBert-54kN-IP   | 88.72          | 84.13              |
 | KoBERT            | 89.63          | 84.23              |
 | Bert-multilingual | 87.07          | 81.78              |
 
