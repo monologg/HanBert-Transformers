@@ -20,27 +20,24 @@ $ transformers bert HanBert-54kN/model.ckpt-3000000 \
 
 ## Dependencies
 
-Tokenizer의 경우 **Ubuntu** 환경에서만 사용 가능합니다.
-
 ## How to Use
 
-### Preparation
+1. **관련 라이브러리 설치**
 
-**1. 관련 라이브러리 설치**
+   - torch>=1.1.0
+   - transformers>=2.2.2
 
-- torch>=1.1.0
-- transformers>=2.2.2
+2. **모델 다운로드 후 압축 해제**
 
-**2. 모델 다운로드 후 압축 해제**
+   - 기존의 HanBert에서는 tokenization 관련 파일을 `/usr/local/moran`에 복사해야 했지만, 해당 폴더 이용 시 그래도 사용 가능합니다.
+   - **다운로드 링크 (Pretrained weight + Tokenizer tool)**
+     - [HanBert-54kN-torch](https://drive.google.com/open?id=1LUyrnhuNC3e8oD2QMJv8tIDrXrxzmdu4)
+     - [HanBert-54kN-IP-torch](https://drive.google.com/open?id=1wjROsuDKoJQx4Pu0nqSefVDs3echKSXP)
 
-- 기존의 HanBert에서는 tokenization 관련 파일을 `/usr/local/moran`에 복사해야 했지만, 해당 폴더 이용 시 그래도 사용 가능합니다.
-- **다운로드 링크 (Pretrained weight + Tokenizer tool)**
-  - [HanBert-54kN-torch](https://drive.google.com/open?id=1LUyrnhuNC3e8oD2QMJv8tIDrXrxzmdu4)
-  - [HanBert-54kN-IP-torch](https://drive.google.com/open?id=1wjROsuDKoJQx4Pu0nqSefVDs3echKSXP)
+3. **tokenization_hanbert.py 준비**
 
-**3. tokenization_hanbert.py 준비**
-
-- 하단의 형태로 디렉토리가 세팅이 되어 있어야 합니다.
+   - Tokenizer의 경우 **Ubuntu** 환경에서만 사용 가능합니다.
+   - 하단의 형태로 디렉토리가 세팅이 되어 있어야 합니다.
 
 ```
 .
@@ -57,9 +54,9 @@ Tokenizer의 경우 **Ubuntu** 환경에서만 사용 가능합니다.
 └── ...
 ```
 
-### Example
+## Example
 
-#### Model
+### 1. Model
 
 ```python
 >>> import torch
@@ -81,7 +78,7 @@ tensor([[[-0.0938, -0.5030,  0.3765,  ..., -0.4880, -0.4486,  0.3600],
        grad_fn=<AddcmulBackward>)
 ```
 
-#### Tokenizer
+### 2. Tokenizer
 
 ```python
 >>> from tokenization_hanbert import HanBertTokenizer
@@ -91,7 +88,7 @@ tensor([[[-0.0938, -0.5030,  0.3765,  ..., -0.4880, -0.4486,  0.3600],
 ['나', '~~는', '걸어가', '~~고', '있', '~~는', '중', '~~입', '~~니다', '.', '나', '##는걸', '##어', '가', '~~고', '~있', '~~는', '중', '~~입', '~~니다', '.', '잘', '분류', '~~되', '~~기', '~~도', '한', '~~다', '.', '잘', '먹', '~~기', '~~도', '한', '~~다', '.']
 ```
 
-#### Test with python file
+### 3. Test with python file
 
 ```bash
 $ python3 test_hanbert.py
