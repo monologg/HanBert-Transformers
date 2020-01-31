@@ -89,8 +89,8 @@ tensor([[[-0.0938, -0.5030,  0.3765,  ..., -0.4880, -0.4486,  0.3600],
 ### 3. Test with python file
 
 ```bash
-$ python3 test_hanbert.py
-$ python3 test_hanbert_ip.py
+$ python3 test_hanbert.py --model_name_or_path HanBert-54kN-torch
+$ python3 test_hanbert.py --model_name_or_path HanBert-54kN-IP-torch
 ```
 
 ## Result on Subtask

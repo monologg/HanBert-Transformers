@@ -1,10 +1,17 @@
+import argparse
+
 import torch
 from transformers import BertModel
 from tokenization_hanbert import HanBertTokenizer
 
+# Get the model path
+parser = argparse.ArgumentParser()
+parser.add_argument("--model_name_or_path", default="HanBert-54kN-torch", type=str, help="Path to pre-trained model or shortcut name")
+args = parser.parse_args()
+
 # Load model and tokenizer
-model = BertModel.from_pretrained('HanBert-54kN-torch')
-tokenizer = HanBertTokenizer.from_pretrained('HanBert-54kN-torch')
+model = BertModel.from_pretrained(args.model_name_or_path)
+tokenizer = HanBertTokenizer.from_pretrained(args.model_name_or_path)
 
 text = "나는 걸어가고 있는 중입니다. 나는걸어 가고있는 중입니다. 잘 분류되기도 한다. 잘 먹기도 한다."
 
