@@ -99,10 +99,10 @@ $ python3 test_hanbert.py --model_name_or_path HanBert-54kN-IP-torch
 
 |                   | **NSMC** (acc) | **Naver-NER** (F1) |
 | ----------------- | -------------- | ------------------ |
-| HanBert-54kN      | **90.16**      | **84.84**          |
-| HanBert-54kN-IP   | 88.72          | 84.45              |
-| KoBERT            | 89.63          | 84.23              |
-| Bert-multilingual | 87.07          | 81.78              |
+| HanBert-54kN      | **90.16**      | **87.31**          |
+| HanBert-54kN-IP   | 88.72          | 86.57              |
+| KoBERT            | 89.63          | 86.11              |
+| Bert-multilingual | 87.07          | 84.20              |
 
 - NSMC (Naver Sentiment Movie Corpus) ([Implementation of HanBert-nsmc](https://github.com/monologg/HanBert-nsmc))
 - Naver NER (NER task on Naver NLP Challenge 2018) ([Implementation of HanBert-NER](https://github.com/monologg/HanBert-NER))
