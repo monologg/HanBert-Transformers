@@ -401,10 +401,14 @@ class HanBertTokenizer(PreTrainedTokenizer):
         """
         super(HanBertTokenizer, self).__init__(unk_token=unk_token, sep_token=sep_token,
                                                pad_token=pad_token, cls_token=cls_token,
-                                               mask_token=mask_token, **kwargs)
-        self.max_len = 512  # hard-coded
-        self.max_len_single_sentence = self.max_len - 2  # take into account special tokens
-        self.max_len_sentences_pair = self.max_len - 3  # take into account special tokens
+                                               mask_token=mask_token, model_max_length=512, 
+                                               **kwargs)
+
+        # Commenting out below codes for preventing attribute error
+        # Instead, set up the max len(currently model_max_len) in super
+        # self.max_len = 512  # hard-coded
+        # self.max_len_single_sentence = self.max_len - 2  # take into account special tokens
+        # self.max_len_sentences_pair = self.max_len - 3  # take into account special tokens
 
         if not os.path.isfile(vocab_file):
             raise ValueError(
